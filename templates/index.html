@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+
+<div class="col-sm-2"></div>
+
+<div class="col-sm-8">
+
+  <h3>Image to ASCII converter</h3>
+  <br>
+  <form>
+
+    <img src="{{ url_for('static',filename='tom_and_jerry.jpg')}}" width="100px" height="100px" id="blah" alt="your image">
+
+    Enter an image
+    <input type="file" name="image" accept="image/*">
+
+    <input type="submit" value="Convert">
+
+  </form>
+
+</div>
+<div class="col-sm-2"></div>
+
+{% endblock %}
