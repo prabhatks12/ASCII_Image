@@ -2,18 +2,22 @@
 
 {% block content %}
 
+<script type="text/javascript" src="{{ url_for('static',filename='source.js')}}"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+
 <div class="col-sm-2"></div>
 
 <div class="col-sm-8">
 
+
   <h3>Image to ASCII converter</h3>
   <br>
-  <form>
+  <form action="{{ url_for('data') }}" method="POST">
 
-    <img src="{{ url_for('static',filename='tom_and_jerry.jpg')}}" width="100px" height="100px" id="blah" alt="your image">
-
-    Enter an image
-    <input type="file" name="image" accept="image/*">
+    <img src="{{ url_for('static',filename='image.jpg')}}" alt="Upload Image" width="100px" height="100px" download="{{ url_for('static',filename='uploaded.jpg') }}" id="blah">
+    <br>
+    Choose image
+    <input type="file" name="image" accept="image/*" onchange="readURL(this)">
 
     <input type="submit" value="Convert">
 
